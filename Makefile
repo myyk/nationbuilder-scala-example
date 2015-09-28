@@ -29,8 +29,13 @@ test-container: $(SENTINEL_CONTAINER_CREATED)
 
 .PHONY: bash
 bash: ##[testing] Run your tests
-bash:
-	$(COMPOSE) run --rm app /bin/bash
+bash: test-container
+	$(COMPOSE) run --service-ports --rm app /bin/bash
+
+.PHONY: run
+run: ##[testing] Run your app
+run: test-container
+	$(COMPOSE) run --service-ports --rm app ./activator run
 
 # .PHONY: test
 # test: ##[testing] Run your tests
