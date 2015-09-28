@@ -1,11 +1,14 @@
-=nationbuilder-scala-example=
+# nationbuilder-scala-example
 
 This is an sandbox app for me to test out Nationbuilder APIs with Playframework.
 
-==How to run project==
-===Pre-reqs===
+## How to run project
+
+### Pre-reqs
 Install `docker`
-===Run===
+
+### Run
+
     make bash
     ./activator run
 
